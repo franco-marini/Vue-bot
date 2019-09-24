@@ -18,12 +18,16 @@
 
 <script>
 // import HomePage from './home/HomePage.vue';
+import availableParts from './data/parts';
 import RobotBuilder from './build/RobotBuilder.vue';
 
 export default {
   name: 'app',
-  components: {
-    RobotBuilder,
+  RobotBuilder,
+  data() {
+    return {
+      availableParts,
+    };
   },
 };
 </script>
