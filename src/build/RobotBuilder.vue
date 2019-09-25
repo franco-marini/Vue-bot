@@ -109,7 +109,6 @@ export default {
       };
     },
   },
-
   methods: {
     addToCart() {
       const robot = this.selectedRobot;
