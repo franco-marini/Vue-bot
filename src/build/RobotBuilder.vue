@@ -112,7 +112,7 @@ export default {
   methods: {
     addToCart() {
       const robot = this.selectedRobot;
-      const cost =        robot.head.cost
+      const cost = robot.head.cost
         + robot.leftArm.cost
         + robot.torso.cost
         + robot.rightArm.cost
