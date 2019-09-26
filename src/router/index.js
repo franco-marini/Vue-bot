@@ -11,6 +11,7 @@ import RobotHeads from '../parts/RobotHeads.vue';
 import RobotTorsos from '../parts/RobotTorsos.vue';
 import SidebarStandard from '../sidebars/SidebarStandard.vue';
 import SidebarBuild from '../sidebars/SidebarBuild.vue';
+import ShoppingCart from '../cart/ShoppingCart.vue';
 
 Vue.use(Router);
 
@@ -38,23 +39,23 @@ export default new Router({
     component: BrowseParts,
     children: [
       {
-        name: 'BrowseArms',
         path: 'arms',
+        name: 'BrowseArms',
         component: RobotArms,
       },
       {
-        name: 'BrowseBases',
         path: 'bases',
+        name: 'BrowseBases',
         component: RobotBases,
       },
       {
-        name: 'BrowseHeads',
         path: 'heads',
+        name: 'BrowseHeads',
         component: RobotHeads,
       },
       {
-        name: 'BrowseTorsos',
         path: 'torsos',
+        name: 'BrowseTorsos',
         component: RobotTorsos,
       },
     ],
@@ -67,7 +68,12 @@ export default new Router({
     beforeEnter(to, from, next) {
       const isValidId = Number.isInteger(Number(to.params.id));
       next(isValidId);
-    }
+    },
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: ShoppingCart,
   },
   ],
 });
