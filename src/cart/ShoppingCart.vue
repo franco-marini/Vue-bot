@@ -52,13 +52,13 @@
 <script>
 export default {
   name: 'Cart',
-  computed:{
+  computed: {
     cart() {
       return this.$store.state.cart;
     },
-    cartSaleItems(){
+    cartSaleItems() {
       return this.$store.getters.cartSaleItems;
-    }
+    },
   },
 };
 </script>
@@ -74,7 +74,7 @@ export default {
   .cost {
     text-align: right;
   }
-  .saveItems{
+  .saveItems {
     margin-top: 50px;
     font-size: 18px;
     color: red;
