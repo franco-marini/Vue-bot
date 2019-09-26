@@ -40,7 +40,7 @@ export default {
   created() {
     this.emitSelectedPart();
   },
-  update() {
+  updated() {
     this.emitSelectedPart();
   },
   computed: {
