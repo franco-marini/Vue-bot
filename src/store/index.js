@@ -11,9 +11,9 @@ export default new Vuex.Store({
     foo: 'root-foo',
   },
   modules: {
-    robots: robotsModule, 
+    robots: robotsModule,
     users: usersModule,
   },
   getters: {
-  }
+  },
 });

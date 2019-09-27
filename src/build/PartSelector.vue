@@ -10,7 +10,7 @@
     </router-link>
     <button @click="selectPreviousPart()" class="prev-selector"></button>
     <button @click="selectNextPart()" class="next-selector"></button>
-    <span v-pin class="sale" v-show="selectedPart.onSale">Sale!</span>
+    <span v-pin:position.top.right class="sale" v-show="selectedPart.onSale">Sale!</span>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ function getNextValidIndex(index, length) {
 }
 export default {
   directives: {
-    pin: pinDirective
+    pin: pinDirective,
   },
   props: {
     parts: { type: Array, required: true },
