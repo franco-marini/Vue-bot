@@ -23,10 +23,20 @@ export default new Vuex.Store({
         .then(result => commit('updateParts', result.data))
         .catch(console.error);
     },
+    addRobotToCart( {commit, state}, robot) {
+      const cart = [...state.cart, robot];
+      return axios.post('/api/cart', cart)
+        .then(() => commit('addRobotToCart', robot))
+    },
   },
   getters: {
     cartSaleItems(state) {
-      return state.cart.filter(item => item.head.onSale);
+      return state.cart.filter(
+        item => item.head.onSale || 
+                item.leftArm.onSale || 
+                item.rightArm.onSale || 
+                item.torso.onSale || 
+                item.base.onSale);
     },
   },
 });
