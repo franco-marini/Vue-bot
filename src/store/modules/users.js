@@ -3,6 +3,7 @@ import axios from 'axios';
 export default {
   state: {
     user: null,
+    foo: 'user-foo',
   },
   mutations: {
     updateCurrentUser(state, user) {
@@ -12,7 +13,7 @@ export default {
   getters: {
     //To access to the root state you need the third param
     foo(state, getters, rootState) {
-      return `users-getter/${rootState.foo}`;
+      return `users-getter/${state.foo}`;
     }
   },
   actions: {
