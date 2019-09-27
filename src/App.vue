@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!--
     State is always namespaced <br/>
     Root Foo: {{rootFoo}} <br/>
     Robots Foo: {{robotsFoo}} <br/>
@@ -9,6 +10,7 @@
     Root Getter Foo: {{rootGetterFoo}} <br/>
     Robots Getter Foo: {{robotsGetterFoo}} <br/>
     <br/>
+    -->
     <header>
       <nav>
         <ul>
@@ -56,14 +58,16 @@ import { mapState, mapGetters } from 'vuex';
 export default {
   name: 'app',
   computed: {
+    /*
     ...mapState({ 
       rootFoo: 'foo',
-      usersFoo: 'foo',
-      //usersFoo: state => state.users.foo,
+      //usersFoo: 'foo',
+      usersFoo: state => state.users.foo,
       }),
     ...mapState('robots', { robotsFoo: 'foo'}),
     ...mapGetters({rootGetterFoo: 'foo'}),
     ...mapGetters('robots', {robotsGetterFoo: 'foo'}),
+    */
     cart(){
       return this.$store.state.robots.cart
     }
