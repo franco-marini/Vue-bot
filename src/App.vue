@@ -1,5 +1,15 @@
 <template>
   <div id="app">
+    State is always namespaced <br/>
+    Root Foo: {{rootFoo}} <br/>
+    Robots Foo: {{robotsFoo}} <br/>
+    Users Foo: {{usersFoo}} <br/>
+    <br/>
+    The root and de users are sharing the same namespaced <br/>
+    Root Getter Foo: {{rootGetterFoo}} <br/>
+    Robots Getter Foo: {{robotsGetterFoo}} <br/>
+    Users Getter Foo: {{usersGetterFoo}} <br/>
+    <br/>
     <header>
       <nav>
         <ul>
@@ -45,6 +55,24 @@
 export default {
   name: 'app',
   computed: {
+    rootFoo() {
+      return this.$store.state.foo;
+    },
+    robotsFoo() {
+      return this.$store.state.robots.foo;
+    },
+    usersFoo() {
+      return this.$store.state.users.foo;
+    },
+    rootGetterFoo(){
+      return this.$store.getters.foo;
+    },
+    robotsGetterFoo(){
+      return this.$store.getters['robots/foo'];
+    },
+    usersGetterFoo(){
+      return this.$store.getters['users/foo'];
+    },
     cart(){
       return this.$store.state.robots.cart
     }

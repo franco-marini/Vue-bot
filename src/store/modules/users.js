@@ -10,6 +10,10 @@ export default {
     },
   },
   getters: {
+    //To access to the root state you need the third param
+    foo(state, getters, rootState) {
+      return `users-getter/${rootState.foo}`;
+    }
   },
   actions: {
     signIn({ commit }) {
